@@ -2,8 +2,53 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
-/* .row {
-    border: 1px solid red;
-} */
+#header {
+    z-index: 50;
+    border-bottom: 3px solid #2D3268;
+}
+
+#banner {
+    height: 100vh;
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#bannerVacancy {
+    height: 100vh;
+    background-image: url(../img/vacancy.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#feedback {
+    background-color: #2D3268;
+}
+
+.feed {
+    position: relative;
+    background: #2D3268;
+    width: 9rem;
+}
+
+.feed::before {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: calc(50% - 15px);
+    width: 30px;
+    height: 30px;
+    background: #2D3268;
+    border-right: 1px solid #F8F9FA;
+    border-bottom: 1px solid #F8F9FA;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.people {
+    width: 100px;
+    height: 80px;
+}
