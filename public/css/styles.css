@@ -31,7 +31,7 @@
 .feed {
     position: relative;
     background: #2D3268;
-    width: 9rem;
+    width: 10rem;
 }
 
 .feed::before {
@@ -49,6 +49,8 @@
 }
 
 .people {
-    width: 100px;
+    width: 80px;
     height: 80px;
+    background: #fff;
+
 }
