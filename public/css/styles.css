@@ -61,3 +61,12 @@ body {
 .accordion-button {
     background-color: #98a694;
 }
+
+
+
+@media (max-width: 991px) {
+    .header-banner,
+    .sac-photo {
+        display: none;
+    }
+}
