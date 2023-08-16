@@ -52,3 +52,12 @@ body {
     border:5px solid #98a694;
     border-radius: 30px;
 }
+
+.sac {
+    background-color: #98a694;
+    min-height: 655px;
+}
+#accordionItem,
+.accordion-button {
+    background-color: #98a694;
+}
