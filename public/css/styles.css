@@ -14,6 +14,15 @@ body {
     background-color: #98a694;
 }
 
+#scrollNavbar {
+    top: 0;
+    left: 0;
+    background-color: #98a694;
+    z-index: 10;
+}
+
+
+
 #offcanvasBody:before {
     content: '';
     position: absolute;
@@ -65,6 +74,7 @@ body {
 
 
 @media (max-width: 991px) {
+    #scrollButtons,
     .header-banner,
     .sac-photo {
         display: none;
