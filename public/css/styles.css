@@ -15,9 +15,10 @@ body {
 }
 
 #scrollNavbar {
-    top: 0;
+    top: -76px;
     left: 0;
     background-color: #98a694;
+    transition: 0.5s;
     z-index: 10;
 }
 
