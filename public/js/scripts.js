@@ -1,7 +1,7 @@
 function scrollMonitor() {
     let scrollPosition = window.scrollY;
     let scrollNavbar = document.getElementById('scrollNavbar');
-    if (scrollPosition >= 450) {
+    if (scrollPosition >= 370) {
         scrollNavbar.style.top = "0px";
     }else{
         scrollNavbar.style.top = "-76px";

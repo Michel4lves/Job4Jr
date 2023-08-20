@@ -5,23 +5,31 @@
     user-select: none;
 }
 
+:root {
+    --bgColor: #f7bd61;
+}
+
 body {
     overflow-x: hidden;
 }
 
 .header {
     height: 527px;
-    background-color: #98a694;
+    background-color: var(--bgColor);
 }
 
 #scrollNavbar {
     top: -76px;
     left: 0;
-    background-color: #98a694;
+    background-color: var(--bgColor);
     transition: 0.5s;
     z-index: 10;
 }
 
+.search-collapse {
+    padding-right: 50px;
+    background-color: var(--bgColor);
+}
 
 
 #offcanvasBody:before {
@@ -31,7 +39,6 @@ body {
     left: 0;
     width: 100%;
     height: 220px;
-    background-color: #98a694;
     z-index: -1;
 }
 
@@ -42,7 +49,7 @@ body {
     left: 0;
     width: 500px;
     height: 30px;
-    background-color: #98a694;
+    background-color: var(--bgColor);
     border-radius: 50px;
 }
 
@@ -53,26 +60,24 @@ body {
     left: 350px;
     width: 300px;
     height: 50px;
-    background-color: #98a694;
+    background-color: var(--bgColor);
     border-radius: 50px;
 }
 
 #carousel {
     min-height: 402px;
-    border:5px solid #98a694;
+    border:5px solid var(--bgColor);
     border-radius: 30px;
 }
 
 .sac {
-    background-color: #98a694;
+    background-color: var(--bgColor);
     min-height: 658px;
 }
 #accordionItem,
 .accordion-button {
-    background-color: #98a694;
+    background-color: var(--bgColor);
 }
-
-
 
 @media (max-width: 991px) {
     #scrollButtons,
@@ -80,4 +85,25 @@ body {
     .sac-photo {
         display: none;
     }
+
+    #offcanvasBody:before {
+        background-color: var(--bgColor);
+    }
+}
+
+@media (min-width: 992px) {
+    .search-collapse {
+        display: none;
+    }
+}
+
+#secondaryNavbar {
+    top: 0;
+    left: 0;
+    background-color: var(--bgColor);
+    z-index: 10;
+}
+
+.secondary-footer {
+    background-color: var(--bgColor);
 }
