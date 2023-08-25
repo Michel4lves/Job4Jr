@@ -1,10 +1,11 @@
-const express       = require('express');
-const app           = express();
-const db            = require('./db/connection');
+const express       = require('express'); //Importando
+const app           = express(); //Inicializando
+const db            = require('./db/connection'); //importando a arquivo de apontamento
 const bodyParser    = require('body-parser');
 
 const PORT      = 3000;
 
+// fazendo o express monitorar uma posta:
 app.listen(PORT, function() {
     console.log(`listening on port ${PORT}`);
 });
@@ -13,8 +14,8 @@ app.listen(PORT, function() {
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // db connection
-db
-    .authenticate()
+db // arquivo de apontamento importado.
+    .authenticate() // método para conectar o banco de dados.
     .then(() => {
         console.log('Data bank connection success')
     })
@@ -23,8 +24,8 @@ db
     });
 
 // routes
-app.get('/', function(req, res) {
-    res.send('Its works!');
+app.get('/', function(req, res) {   // app.get('rota', function que retorna uma requisição e/ou uma resposta) { 
+    res.send('Its works!');         //      resposta.send('valor retornado');
 });
 
 // jobs routes
