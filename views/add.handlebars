@@ -1,0 +1,120 @@
+<header>
+    <div class="container-xl px-xl-5">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg position-fixed w-100 border-bottom border-secondary" id="secondaryNavbar">
+                    <div class="container-xl px-xl-5">
+                        <div class="container-fluid">
+                            <div class="col d-flex justify-content-between align-items-center">
+                                <a class="navbar-brand" href="#">
+                                    <img src="../public/img/havagaspontocom.png" alt="logo" width="70" height="50">
+                                </a>
+                                <div class="collapse position-absolute w-100 search-collapse py-3" id="navbarToggleExternalContent">
+                                    <div class="row">
+                                        <div class="input-group">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" aria-label="Close" data-bs-target="#navbarToggleExternalContent">X</button>
+                                            <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                            <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex justify-content-end gap-2">
+                                    <button class="navbar-toggler p-2 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <i class="fas fa-search px-2"></i>
+                                    </button>
+                                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                </div>
+                                <div class="col-7 ps-4 d-none d-lg-flex justify-content-center align-items-center" id="scrollButtons">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                                    <div class="offcanvas-header" id="offcanvasHeader">
+                                    <div class="offcanvas-title" id="offcanvasNavbarLabel">
+                                        <a class="navbar-brand" href="#">
+                                            <img src="../public/img/havagaspontocom.png" alt="logo" width="70" height="50">
+                                        </a>
+                                    </div>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body d-flex justify-content-lg-end gap-3 flex-column flex-lg-row overflow-hidden" id="offcanvasBody">
+                                        <button class="btn btn-outline-light btn-outline-primary" type="submit">Entrar</button>
+                                        <button class="btn btn-primary" type="submit">Cadastre-se gratuitamente</button>
+                                        <div class="row my-5 ps-5 d-flex gap-4 d-lg-none">
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="#">
+                                                Home
+                                            </a>
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="#lastVgs">
+                                                Últimas vagas adicionadas
+                                            </a>
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="#lastVgs">
+                                                Ver todas as vagas
+                                            </a>
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="#lastVgs">
+                                                Adicionar vaga
+                                            </a>
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="#feedback">
+                                                Depoimentos
+                                            </a>
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="#sac">
+                                                Dúvidas frequentes
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <section>
+        <div class="container-xl px-xl-5 py-5">
+            <div class="row my-5">
+                <div class="col d-flex align-items-end justify-content-center border-bottom border-5 border-primary">
+                    <img src="../public/img/banner3.png" alt="banner3" width="260" height="400" class="pt-5">
+                    <p class="fs-1 text-center text-primary ps-5">Divulgue sua vaga!</p>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center my-5">
+                <p class="fs-1 text-center p-4 fw-bold text-secondary">Preencha o formulário:</p>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-10">
+                        <form class="border p-5">
+                            <p class="fs-5 text-center text-primary p-4">Preencha os dados da melhor forma possível para encontrar mais rápido seu funcionário ideal!:</p>
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Título da vaga:</label>
+                                <input type="text" class="form-control" id="title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Descrição da vaga:</label>
+                                <textarea class="form-control" id="description" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="salary" class="form-label">Salário:</label>
+                                <input type="number" class="form-control" id="salary" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="company" class="form-label">Empresa:</label>
+                                <input type="text" class="form-control" id="company" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <input type="hidden" id="newJob" value="1">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
