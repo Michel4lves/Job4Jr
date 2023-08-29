@@ -76,42 +76,27 @@
 </header>
 <main>
     <section>
-        <div class="container-xl px-xl-5 py-5">
-            <div class="row my-5">
-                <div class="col d-flex align-items-end justify-content-center border-bottom border-5 border-primary">
-                    <img src="/img/banner3.png" alt="banner3" width="260" height="400" class="pt-5">
-                    <p class="fs-1 text-center text-primary ps-5">Divulgue sua vaga!</p>
-                </div>
-            </div>
+        <div class="container-xl px-xl-5 py-5"">
             <div class="row d-flex justify-content-center my-5">
-                <p class="fs-1 text-center p-4 fw-bold text-secondary">Preencha o formulário:</p>
+                <p class="fs-1 text-center text-primary p-4">Últimas oportunidades adicionadas</p>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-lg-10">
-                        <form class="border p-5">
-                            <p class="fs-5 text-center text-primary p-4">Preencha os dados da melhor forma possível para encontrar mais rápido seu funcionário ideal!:</p>
-                            <div class="mb-3">
-                                <label for="title" class="form-label">Título da vaga:</label>
-                                <input type="text" class="form-control" id="title" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="description" class="form-label">Descrição da vaga:</label>
-                                <textarea class="form-control" id="description" required></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="salary" class="form-label">Salário:</label>
-                                <input type="number" class="form-control" id="salary" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="company" class="form-label">Empresa:</label>
-                                <input type="text" class="form-control" id="company" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email:</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <input type="hidden" id="newJob" value="1">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+                    <div class="col-lg-9">
+                        <div class="table-responsive-lg">
+                            <table class="table table-light table-hover border border-1 border-primary text-center">
+                                <tbody>
+                                    {{#each jobs}}
+                                    <tr>
+                                        <th scope="row">{{dataValues.title}}</th>
+                                        <td>{{dataValues.description}}</td>
+                                        <td>{{dataValues.salary}}</td>
+                                        <td>{{dataValues.company}}</td>
+                                        <td>{{dataValues.email}}</td>
+                                        <td><span class="badge rounded-pill text-bg-warning">NEW</span></td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -30,4 +30,25 @@ router.post('/add', (req, res) => { // "/add" => nome da rota ou a rota em si
 
 });
 
+
+
+// My routes:
+router.get('/alljobs', function(req, res) {
+
+    Job.findAll({
+        order: [
+            ['createdAt', 'DESC']
+        ]
+    })
+    .then(jobs => {
+        res.render('alljobs', {jobs});
+    })
+
+
+})
+
+
+
+
+
 module.exports = router
