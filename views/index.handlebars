@@ -57,11 +57,11 @@
                                 </a>
                                 <div class="collapse position-absolute w-100 search-collapse py-3" id="navbarToggleExternalContent">
                                     <div class="row">
-                                        <div class="input-group">
+                                        <form class="input-group" action="/jobs/alljobs" method="GET">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="collapse" aria-label="Close" data-bs-target="#navbarToggleExternalContent">X</button>
-                                            <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                            <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-                                        </div>
+                                            <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2" name="job">
+                                            <button class="btn btn-primary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="col d-flex justify-content-end gap-2">
@@ -73,10 +73,10 @@
                                     </button>
                                 </div>
                                 <div class="col-7 ps-4 d-none d-lg-flex justify-content-center align-items-center" id="scrollButtons">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                        <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-                                    </div>
+                                    <form class="input-group" action="/jobs/alljobs" method="GET">
+                                        <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2" name="job">
+                                        <button class="btn btn-primary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+                                    </form>
                                 </div>
                                 <div class="col-4 d-none d-lg-flex justify-content-lg-end gap-3" id="scrollButtons">
                                     <button class="btn btn-outline-light btn-outline-primary" type="submit">Entrar</button>
@@ -92,10 +92,10 @@
             <div class="col d-flex align-items-lg-start align-items-center flex-column">
                 <p class="fs-5 text-center text-light">A maneira mais fácil de encontrar seu novo emprego</p>
                 <p class="fs-1 text-center text-light">Encontre sua vaga de emprego</p>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-primary btn-lg" type="button" id="button-addon2">Buscar</button>
-                </div>
+                <form class="input-group mb-3" action="/jobs/alljobs" method="GET">
+                    <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2" name="job">
+                    <button class="btn btn-primary btn-lg" type="submit" id="button-addon2">Buscar</button>
+                </form>
             </div>
             <div class="col-4 header-banner">
                 <img src="/img/banner.png" alt="banner" width="323" height="450">
@@ -111,12 +111,12 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-9">
                         <table class="table table-light table-hover border border-1 border-primary text-center">
-                            <tbody>
+                            <tbody class="text-start">
                                 {{#each jobs}}
                                 <tr>
                                     <th scope="row">{{dataValues.title}}</th>
                                     <td>{{dataValues.company}}</td>
-                                    <td>{{dataValues.salary}}</td>
+                                    <td>R$ {{dataValues.salary}}</td>
                                 </tr>
                                 {{/each}}
                             </tbody>

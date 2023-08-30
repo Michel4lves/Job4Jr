@@ -11,11 +11,11 @@
                                 </a>
                                 <div class="collapse position-absolute w-100 search-collapse py-3" id="navbarToggleExternalContent">
                                     <div class="row">
-                                        <div class="input-group">
+                                        <form class="input-group" action="/jobs/alljobs" method="GET">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="collapse" aria-label="Close" data-bs-target="#navbarToggleExternalContent">X</button>
-                                            <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                            <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-                                        </div>
+                                            <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2" name="job">
+                                            <button class="btn btn-primary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="col d-flex justify-content-end gap-2">
@@ -27,10 +27,10 @@
                                     </button>
                                 </div>
                                 <div class="col-7 ps-4 d-none d-lg-flex justify-content-center align-items-center" id="scrollButtons">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                        <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-                                    </div>
+                                    <form class="input-group" action="/jobs/alljobs" method="GET">
+                                        <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2" name="job">
+                                        <button class="btn btn-primary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+                                    </form>
                                 </div>
                                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                                     <div class="offcanvas-header" id="offcanvasHeader">
@@ -78,7 +78,11 @@
     <section>
         <div class="container-xl px-xl-5 py-5"">
             <div class="row d-flex justify-content-center my-5">
-                <p class="fs-1 text-center text-primary p-4">Últimas oportunidades adicionadas</p>
+                {{#if search}}
+                    <p class="fs-1 text-center text-primary p-4">Oportunidades referentes a: {{search}}</p>
+                {{else}}
+                    <p class="fs-1 text-center text-primary p-4">Todas Oportunidades adicionadas:</p>
+                {{/if}}
                 <div class="row d-flex justify-content-center">
                     <div class="col-xl-11">
                         <div class="table-responsive">
@@ -88,7 +92,7 @@
                                     <tr>
                                         <th scope="row">{{dataValues.title}}</th>
                                         <td>{{dataValues.description}}</td>
-                                        <td>{{dataValues.salary}}</td>
+                                        <td>R$ {{dataValues.salary}}</td>
                                         <td>{{dataValues.company}}</td>
                                         <td>{{dataValues.email}}</td>
                                         <td><span class="invisible{{#if dataValues.new_job}}badge rounded-pill text-bg-warning px-2 fw-bold{{/if}}">NEW</span></td>
