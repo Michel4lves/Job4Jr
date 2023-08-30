@@ -4,6 +4,7 @@ const app           = express(); //Inicializando
 const path          = require('path');  //Importando
 const db            = require('./db/connection'); //importando a arquivo de apontamento
 const bodyParser    = require('body-parser'); // importando
+const Job           = require('./models/Job'); // importando o modelo
 
 
 const PORT      = 3000;
@@ -37,7 +38,15 @@ db // arquivo de apontamento importado.
 // routes
 app.get('/', function(req, res) {   // app.get('rota', function que retorna uma requisição e/ou uma resposta) { 
     // res.send('Its works!');  //      resposta.send('valor retornado');
-    res.render('index');
+    Job.findAll({  // a partir do model Job
+        order: [
+            ['createdAt', 'DESC'] // usando o createdAt para ordenar de forma decrescente
+        ],
+        limit: 3 // Limitando a busca aos três últimos registros
+    })
+    .then(jobs => {
+        res.render('index', {jobs});
+    })
 });
 
 // jobs routes

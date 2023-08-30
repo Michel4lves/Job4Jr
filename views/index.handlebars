@@ -112,21 +112,13 @@
                     <div class="col-lg-9">
                         <table class="table table-light table-hover border border-1 border-primary text-center">
                             <tbody>
+                                {{#each jobs}}
                                 <tr>
-                                    <th scope="row">title</th>
-                                    <td>company</td>
-                                    <td>salary</td>
+                                    <th scope="row">{{dataValues.title}}</th>
+                                    <td>{{dataValues.company}}</td>
+                                    <td>{{dataValues.salary}}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">title</th>
-                                    <td>company</td>
-                                    <td>salary</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">title</th>
-                                    <td>company</td>
-                                    <td>salary</td>
-                                </tr>
+                                {{/each}}
                             </tbody>
                         </table>
                     </div>
