@@ -7,7 +7,7 @@ const Job       = require('../models/Job'); // importando o modelo
 //     res.send('deu certo')
 // })
 
-router.get('/add', function(req, res) {
+router.get('/add', function(req, res) { // rota para acessar a template add
     res.render('add');
 })
 
@@ -34,17 +34,14 @@ router.post('/add', (req, res) => { // "/add" => nome da rota ou a rota em si
 
 // My routes:
 router.get('/alljobs', function(req, res) {
-
-    Job.findAll({
+    Job.findAll({  // a partir do model Job
         order: [
-            ['createdAt', 'DESC']
+            ['createdAt', 'DESC'] // usando o createdAt para ordenar de forma decrescente
         ]
     })
     .then(jobs => {
         res.render('alljobs', {jobs});
     })
-
-
 })
 
 

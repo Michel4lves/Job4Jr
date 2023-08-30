@@ -80,8 +80,8 @@
             <div class="row d-flex justify-content-center my-5">
                 <p class="fs-1 text-center text-primary p-4">Últimas oportunidades adicionadas</p>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-lg-9">
-                        <div class="table-responsive-lg">
+                    <div class="col-xl-11">
+                        <div class="table-responsive">
                             <table class="table table-light table-hover border border-1 border-primary text-center">
                                 <tbody>
                                     {{#each jobs}}
@@ -91,7 +91,7 @@
                                         <td>{{dataValues.salary}}</td>
                                         <td>{{dataValues.company}}</td>
                                         <td>{{dataValues.email}}</td>
-                                        <td><span class="badge rounded-pill text-bg-warning">NEW</span></td>
+                                        <td><span class="invisible{{#if dataValues.new_job}}badge rounded-pill text-bg-warning px-2 fw-bold{{/if}}">NEW</span></td>
                                     </tr>
                                     {{/each}}
                                 </tbody>
