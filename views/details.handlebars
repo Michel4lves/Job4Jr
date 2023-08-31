@@ -1,0 +1,112 @@
+<header>
+    <div class="container-xl px-xl-5">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg position-fixed w-100 border-bottom border-secondary" id="secondaryNavbar">
+                    <div class="container-xl px-xl-5">
+                        <div class="container-fluid">
+                            <div class="col d-flex justify-content-between align-items-center">
+                                <a class="navbar-brand" href="/">
+                                    <img src="/img/havagaspontocom.png" alt="logo" width="70" height="50">
+                                </a>
+                                <div class="collapse position-absolute w-100 search-collapse py-3" id="navbarToggleExternalContent">
+                                    <div class="row">
+                                        <form class="input-group" action="/jobs/alljobs" method="GET">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="collapse" aria-label="Close" data-bs-target="#navbarToggleExternalContent">X</button>
+                                            <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2" name="job">
+                                            <button class="btn btn-primary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col d-flex justify-content-end gap-2">
+                                    <button class="navbar-toggler p-2 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <i class="fas fa-search px-2"></i>
+                                    </button>
+                                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                </div>
+                                <div class="col-7 ps-4 d-none d-lg-flex justify-content-center align-items-center" id="scrollButtons">
+                                    <form class="input-group" action="/jobs/alljobs" method="GET">
+                                        <input type="text" class="form-control" placeholder="Digite um cargo" aria-label="Recipient's username" aria-describedby="button-addon2" name="job">
+                                        <button class="btn btn-primary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+                                    </form>
+                                </div>
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                                    <div class="offcanvas-header" id="offcanvasHeader">
+                                    <div class="offcanvas-title" id="offcanvasNavbarLabel">
+                                        <a class="navbar-brand" href="/">
+                                            <img src="/img/havagaspontocom.png" alt="logo" width="70" height="50">
+                                        </a>
+                                    </div>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body d-flex justify-content-lg-end gap-3 flex-column flex-lg-row overflow-hidden" id="offcanvasBody">
+                                        <button class="btn btn-outline-light btn-outline-primary" type="submit">Entrar</button>
+                                        <button class="btn btn-primary" type="submit">Cadastre-se gratuitamente</button>
+                                        <div class="row my-5 ps-5 d-flex gap-4 d-lg-none">
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="/">
+                                                Home
+                                            </a>
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="/#lastVgs">
+                                                Últimas vagas adicionadas
+                                            </a>
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="/jobs/alljobs">
+                                                Ver todas as vagas
+                                            </a>
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="/jobs/add">
+                                                Adicionar vaga
+                                            </a>
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="/#feedback">
+                                                Depoimentos
+                                            </a>
+                                            <a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-0-hover link-opacity-50-hover fw-bold" href="/#sac">
+                                                Dúvidas frequentes
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <section>
+        <div class="container-xl px-xl-5 py-5">
+            <div class="row my-5">
+                <div class="col d-flex align-items-end justify-content-start border-bottom border-5 border-primary ps-5">
+                    <img src="/img/banner4.png" alt="banner3" width="460" height="400" class="pt-5">
+                    <p class="fs-1 text-center text-primary ps-5">{{job.dataValues.title}}</p>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center mb-5 ms-lg-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col">
+                        <div class="mb-3">
+                            <p class="fs-4 text-primary fw-bold">{{job.dataValues.company}}</p>
+                        </div>
+                        <div class="mb-3">
+                            <p class="fs-5 fw-bold">Descrição:</p>
+                            <p class="fs-5">{{job.dataValues.description}}</p>
+                        </div>
+                        <div class="mb-3">
+                            <p class="fs-5 fw-bold">Salário:</p>
+                            <p class="fs-5">R$ {{job.dataValues.salary}}</p>
+                        </div>
+                        <div class="mb-3">
+                            <p class="fs-5 fw-bold">Para candidatar-se, envie seu currículo para:</p>
+                            <p class="fs-5 text-warning-emphasis">{{job.dataValues.email}}</p>
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <a href="javascript:history.back()" class="btn btn-primary mt-5">Voltar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
