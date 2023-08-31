@@ -10,9 +10,23 @@ const Op        = sequelize.Op; // iniciando o pacote Op, do sequelize, para bus
 //     res.send('deu certo')
 // })
 
+// add page route
 router.get('/add', function(req, res) { // rota para acessar a template add
     res.render('add');
 })
+
+// details route
+router.get('/details/:id', (req, res) => {
+    Job.findOne({
+        where: {id: req.params.id}
+    })
+    .then(job => {
+        res.render('details', {job});
+    })
+    .catch(err => console.log(err));
+});
+
+
 
 // add job via post (criando a rota de adicionar dados ao banco)
 router.post('/add', (req, res) => { // "/add" => nome da rota ou a rota em si
@@ -63,7 +77,6 @@ router.get('/alljobs', function(req, res) {
         })
         .catch(err => console.log(err));
     }
-
 
 })
 

@@ -87,29 +87,29 @@
                 <p class="fs-1 text-center p-4 fw-bold text-secondary">Preencha o formulário:</p>
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-10">
-                        <form class="border p-5">
+                        <form class="border p-5" action="/jobs/add" method="POST">
                             <p class="fs-5 text-center text-primary p-4">Preencha os dados da melhor forma possível para encontrar mais rápido seu funcionário ideal!:</p>
                             <div class="mb-3">
                                 <label for="title" class="form-label">Título da vaga:</label>
-                                <input type="text" class="form-control" id="title" required>
+                                <input type="text" class="form-control" id="title" name="title" required>
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label">Descrição da vaga:</label>
-                                <textarea class="form-control" id="description" required></textarea>
+                                <textarea class="form-control" id="description" name="description" required></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="salary" class="form-label">Salário:</label>
-                                <input type="number" class="form-control" id="salary" required>
+                                <input type="number" class="form-control" id="salary" name="salary" required>
                             </div>
                             <div class="mb-3">
                                 <label for="company" class="form-label">Empresa:</label>
-                                <input type="text" class="form-control" id="company" required>
+                                <input type="text" class="form-control" id="company" name="company" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email:</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
-                            <input type="hidden" id="newJob" value="1">
+                            <input type="hidden" id="newJob" value="1" name="new_job">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
