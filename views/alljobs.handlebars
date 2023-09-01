@@ -76,31 +76,50 @@
 </header>
 <main>
     <section>
-        <div class="container-xl px-xl-5 py-5"">
+        <div class="container-xl px-xl-5 py-5">
             <div class="row d-flex justify-content-center my-5">
                 {{#if search}}
                     <p class="fs-1 text-center text-primary p-4">Oportunidades referentes a: {{search}}</p>
+                    <div class="col-lg-2 d-flex justify-content-center">
+                        <a href="/jobs/alljobs" class="btn btn-outline-primary mt-3 mb-5">Ver todas vagas</a>
+                    </div>
                 {{else}}
                     <p class="fs-1 text-center text-primary p-4">Todas Oportunidades adicionadas:</p>
                 {{/if}}
                 <div class="row d-flex justify-content-center">
-                    <div class="col-xl-11">
+                    {{!-- <div class="col-xl-11">
                         <div class="table-responsive">
-                            <table class="table table-light table-hover border border-1 border-primary text-center">
+                            <table class="table table-light table-hover border border-1 border-primary text-center align-middle">
                                 <tbody>
                                     {{#each jobs}}
                                     <tr>
                                         <th scope="row">{{dataValues.title}}</th>
-                                        <td>{{dataValues.description}}</td>
-                                        <td>R$ {{dataValues.salary}}</td>
                                         <td>{{dataValues.company}}</td>
-                                        <td>{{dataValues.email}}</td>
-                                        <td><span class="invisible{{#if dataValues.new_job}}badge rounded-pill text-bg-warning px-2 fw-bold{{/if}}">NEW</span></td>
+                                        <td class="col-2">R$ {{dataValues.salary}}</td>
+                                        <td>{{dataValues.description}}</td>
+                                        <td><span class="invisible{{#if dataValues.new_job}}badge rounded-pill text-bg-warning px-2 py-1 fw-bold{{/if}}">NOVO</span></td>
+                                        <td><a href="/jobs/details/{{dataValues.id}}" class="badge rounded-pill text-bg-primary px-2 fw-bold link-underline-opacity-0 link-underline-opacity-0-hover link-underline-primary fs-6">Detalhes</a></td>
                                     </tr>
                                     {{/each}}
                                 </tbody>
                             </table>
                         </div>
+                    </div> --}}
+                    <div class="col">
+                        {{#each jobs}}
+                        <div class="border border-primary p-md-2 mb-3 rounded-3 position-relative overflow-hidden">
+                            <div>
+                                <p class="fs-5 fw-bold">{{dataValues.title}}</p>
+                                <p class="fs-6">{{dataValues.company}}</p>
+                                <p>{{dataValues.description}}</p>
+                            </div>
+                            <div class="col d-flex justify-content-between">
+                                <p class="fs-6 text-warning-emphasis fw-bold">R$ {{dataValues.salary}},00</p>
+                                <a href="/jobs/details/{{dataValues.id}}" class="btn btn-primary">Detalhes</a>
+                            </div>
+                            <span class="position-absolute px-5 z-1 invisible{{#if dataValues.new_job}}fw-bold btn bg-warning text-dark{{/if}}" id="new">NEW</span>
+                        </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>

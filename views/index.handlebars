@@ -109,18 +109,19 @@
             <div class="row d-flex justify-content-center my-5">
                 <p class="fs-1 text-center text-primary p-4">Últimas oportunidades adicionadas</p>
                 <div class="row d-flex justify-content-center">
-                    <div class="col-lg-9">
-                        <table class="table table-light table-hover border border-1 border-primary text-center">
-                            <tbody class="text-start">
-                                {{#each jobs}}
-                                <tr>
-                                    <th scope="row">{{dataValues.title}}</th>
-                                    <td>{{dataValues.company}}</td>
-                                    <td>R$ {{dataValues.salary}}</td>
-                                </tr>
-                                {{/each}}
-                            </tbody>
-                        </table>
+                    <div class="col">
+                        {{#each jobs}}
+                        <div class="border border-primary p-md-2 mb-3 rounded-3">
+                            <div>
+                                <p class="fs-5 fw-bold">{{dataValues.title}}</p>
+                                <p class="fs-6">{{dataValues.company}}</p>
+                            </div>
+                            <div class="col d-flex justify-content-between">
+                                <p class="fs-6 text-warning-emphasis fw-bold">R$ {{dataValues.salary}},00</p>
+                                <a href="/jobs/details/{{dataValues.id}}" class="btn btn-primary">Detalhes</a>
+                            </div>
+                        </div>
+                        {{/each}}
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
@@ -142,7 +143,6 @@
                     <p class="fs-5">Muitas empresas enviam oportunidades de trabalho para nosso site.</p>
                     <p class="fs-5">Envie sua vaga e faça parte deste time especial de empresas.</p>
                     <div class="col d-flex justify-content-center">
-                        {{!-- <button type="button" class="btn btn-primary mt-3 mb-5" href="/jobs/add">Enviar vaga</button> --}}
                         <a class="btn btn-primary mt-3 mb-5" href="/jobs/add">Enviar vaga</a>
                     </div>
                 </div>

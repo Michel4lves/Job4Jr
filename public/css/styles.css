@@ -107,3 +107,9 @@ body {
 .secondary-footer {
     background-color: var(--bgColor);
 }
+
+#new {
+    transform: rotate(45deg);
+    top: 0;
+    right: -50px;
+}
