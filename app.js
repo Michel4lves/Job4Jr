@@ -6,12 +6,15 @@ const db            = require('./db/connection'); //importando a arquivo de apon
 const bodyParser    = require('body-parser'); // importando
 const Job           = require('./models/Job'); // importando o modelo
 
+const updateJobStatus = require('./models/updateJobStatus'); // Importe a função de atualização
 
 const PORT      = 3000;
 
 // fazendo o express monitorar uma posta:
 app.listen(PORT, function() {
     console.log(`listening on port ${PORT}`);
+    
+    updateJobStatus(); // Executa a atualização ao iniciar o servidor
 });
 
 // body parser
